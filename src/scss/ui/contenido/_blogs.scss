@@ -1,0 +1,72 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenido-principal{
+    @include m.grid (1,2rem);
+    @include m.tablet {
+        grid-template-columns: 3fr 2fr;
+        column-gap: 3rem;
+    }
+}
+
+.blogs{
+    &__heading {
+        @include m.tablet {
+            padding: 5rem 0 0 0;
+        }
+        @include m.headingBorder(v.$negro, v.$primario);
+        text-align: center;
+    }
+}
+.blog {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #e1e1e1;
+    &:last-of-type{
+        border-bottom: 0;
+    }
+    &__nombre{
+        padding: 2rem 0;
+        margin: 0;
+    }
+    &__texto{
+        margin: 0 0 2rem 0;
+        font-size: 1.6rem;
+    }
+    &__enlace{
+        @include m.boton(v.$primario, v.$blanco);
+        text-transform: uppercase;
+        margin-bottom: 3rem;
+        @include m.tablet {
+            width: 50%;
+        }
+    }
+
+}
+
+.side {
+    margin-bottom: 3rem;
+    &__titulo {
+        text-align: left;
+        text-transform: none;
+        margin: 0 0 1rem 0;
+    }
+    &__descripcion{
+        line-height: 1.5;
+        font-size: 1.6rem;
+    }
+    &__precio, &__cupos{
+        margin: 0;
+        font-size: 2rem;
+    }
+    &__cupos--span, &__precio--span{
+        font-weight: 700;
+    }
+    &__enlace {
+        margin-top: 2rem;
+        @include m.boton(v.$primario, v.$blanco);
+        text-transform: uppercase;
+        @include m.tablet {
+            width: 50%;
+        }
+    }
+}

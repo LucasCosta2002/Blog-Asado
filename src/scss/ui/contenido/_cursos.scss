@@ -1,0 +1,30 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.curso {
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        column-gap: 3rem;
+    }
+    border-bottom: 1px solid #e1e1e1;
+    margin-bottom: 3rem;
+    &:last-of-type{
+        border-bottom:0;
+        margin-bottom:0;
+    }
+
+    &__titulo {
+        @include m.headingBorder(v.$negro, v.$primario);
+        margin: 2rem 0;
+    }
+    &__cupos, &__precio {
+        margin: 0;
+        &--span {
+            font-weight: 700;
+        }
+    }
+    &__descripcion {
+        font-size: 1.8rem;
+    }
+}

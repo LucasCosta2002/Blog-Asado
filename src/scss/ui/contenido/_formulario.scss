@@ -1,0 +1,47 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contacto {
+    &__imagen {
+        @include m.bgImage('../img/contacto.jpg');
+        height: 50rem;
+    }
+    &__formulario {
+        background-color: v.$blanco;
+        width: 95%;
+        margin: -5rem auto 0 auto;
+        border-radius: 1rem;
+        padding: 5rem 2rem 5rem 2rem;
+        @include m.tablet {
+            padding: 5rem;
+        }
+    }
+}
+.campo{
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+
+    &__label {
+        flex: 0 0 9rem;
+        text-align: right;
+        padding-right: 2rem;
+    }
+
+    &__input {
+        flex: 1;
+        border: 1px solid #e1e1e1;
+        padding: 1rem;
+    }
+    &__input--textarea {
+        height: 20rem;
+    }
+
+    &__submit{
+        @include m.boton(v.$primario, v.$blanco);
+        @include m.tablet {
+            width: 20rem;
+            margin: 0 0 0 auto;
+        }
+    }
+}  

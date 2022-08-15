@@ -1,0 +1,45 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footer {
+    background-color: v.$primario;
+    padding: 1rem 2rem 0 2rem;
+    margin-top: 3rem;
+    
+    &__barra {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include m.tablet {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    
+
+    &__logo{
+        width: 10rem;
+    }
+
+    &__link {
+        &:last-of-type{
+            margin-bottom: 1rem;
+        }
+        @include m.tablet {
+            &:last-of-type{
+                margin-bottom: 0;
+            }
+            &:hover {
+                background-color: darken(v.$primario, 10%);
+            }
+        }
+    }
+
+    &__copy {
+        margin: 0;
+        padding: 0 0 1rem 0;
+        text-align: center;
+        color: v.$blanco;
+        font-weight: 700;
+    }
+}
